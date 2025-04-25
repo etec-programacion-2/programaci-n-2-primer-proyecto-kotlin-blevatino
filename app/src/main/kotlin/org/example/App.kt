@@ -12,6 +12,10 @@ fun main() {
     println(esParOImpar(4))
     println ("\t")
     println(PositivoNegativoCero(0))
+    println ("\t")
+    mostrarNumerosConLoops()
+    println ("\t")
+    MostrarNumerosPares()
 
 }
 
@@ -47,3 +51,58 @@ fun PositivoNegativoCero(num: Int):String {
         else -> "Cero"
     }
 }
+
+fun mostrarNumerosConLoops() {
+    // Usando for
+    println("Usando for:")
+    for (i in 1..10) {
+        println(i)
+    }
+    
+    // Usando while
+    println("\nUsando while:")
+    var j = 1
+    while (j <= 10) {
+        println(j)
+        j++
+    }
+    
+    // Usando do-while
+    println("\nUsando do-while:")
+    var k = 1
+    do {
+        println(k)
+        k++
+    } while (k <= 10)
+}
+
+fun MostrarNumerosPares(){
+    // Usando for
+    println("Usando for:")
+    for (i in 1..20) {
+        when{
+            i % 2 == 0 -> println(i)
+        }
+    }
+    
+    // Usando while
+    println("\nUsando while:")
+    var j = 1
+    while (j <= 20) {
+        when{
+            j % 2 == 0 -> println(j)
+        }
+        j++
+    }
+    
+    // Usando do-while
+    println("\nUsando do-while:")
+    var k = 1
+    do {
+        when{
+            k % 2 == 0 -> println(k)
+        }
+        k ++
+    } while (k <= 20)
+}
+
