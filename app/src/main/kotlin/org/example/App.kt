@@ -22,6 +22,13 @@ fun main() {
     saludar("Bruno",16)
     println ("\t")
     potencia(2.0,9.0)
+    println ("\t")
+    demostrarAlcanceVariables()
+    println ("\t")
+    println(calcularPromedio(listOf(8,4)))
+    println ("\t")
+    mayormenor(listOf(5.0,7.0,2.0,9.0,1.0))
+
 
 }
 
@@ -125,4 +132,46 @@ fun potencia(n: Double, m: Double){
     val exponente = m
     val resultado = Math.pow(base, exponente)
     println(resultado)
+}
+
+fun demostrarAlcanceVariables() {
+    // Variable local en el ámbito de la función
+    val variableGlobal = "Soy global en esta función"
+    
+    // Bloque if con su propio ámbito
+    if (true) {
+        val variableIf = "Soy local del if"
+        println("Dentro del if: $variableIf")
+        println("Puedo acceder a: $variableGlobal")
+    }
+    
+    // Bloque for con su propio ámbito
+    for (i in 1..3) {
+        val variableFor = "Soy local del for - iteración $i"
+        println("Dentro del for: $variableFor")
+        println("Puedo acceder a: $variableGlobal")
+    }
+    
+    // Intentar acceder a variables locales fuera de su ámbito
+    // println(variableIf)  // Esto daría error
+    // println(variableFor) // Esto daría error
+}
+
+fun calcularPromedio(numeros: List<Int>): Double {
+    var suma = 0  // Variable local mutable
+    var contador = 0  // Variable local mutable
+    
+    for (numero in numeros) {
+        suma += numero
+        contador++
+    }
+    
+    return if (contador > 0) suma.toDouble() / contador else 0.0
+}
+
+fun mayormenor(lista: List<Double>){
+    val listaordenada = lista.sorted()
+    val mayor: Double = listaordenada.last()
+    val menor: Double = listaordenada[0]
+    println("El numero mayor es $mayor y el menor $menor")
 }
